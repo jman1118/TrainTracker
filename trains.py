@@ -13,7 +13,7 @@ try:
 except ImportError:
     from urllib2 import urlopen, Request #Works in Python 2
     
-demo_key = "378b24a7d83a422a80dfc9990941fde2" #WMATA API key
+demo_key = "" #WMATA API key
 train_url = "https://api.wmata.com/StationPrediction.svc/json/GetPrediction/All"
 hdrs = {'api_key': demo_key}
 req = Request(train_url, headers=hdrs) #Provides API key
