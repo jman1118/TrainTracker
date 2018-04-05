@@ -8,6 +8,7 @@
 
 import json #Deals with json data format
 import re # import regional expression (might use later, idk)
+from api_key import * # create a python file named api_key to that contains your WMATA api key.
 from tkinter import * #import tkinter
 try:
     from urllib.request import urlopen, Request # Works in Python 3
@@ -15,7 +16,7 @@ except ImportError:
     from urllib2 import urlopen, Request #Works in Python 2
     
 
-demo_key = "" #WMATA API key *Do Not Commit*
+demo_key = api_key #WMATA API key *Do Not Commit your key*
 
 train_url = "https://api.wmata.com/StationPrediction.svc/json/GetPrediction/All"
 hdrs = {'api_key': demo_key}
