@@ -1,5 +1,6 @@
 #Python WAMTA tracker
 """ A very basic python app using a gui to track trains on the Washington Metro """
+"""James Vanaselja - Modified on 4/5/2018"""
 
 # -*- coding: utf-8 -*-
 # -- Train Tracker for Washington Metro --
@@ -79,18 +80,18 @@ def gui(choices,line, display_text="Choose a train line from list"):
     s.config(command=txt.yview)
     txt.config(yscrollcommand=s.set)
     txt.pack(expand=True)
-    
+    #callback for button selection of "OK"
     def action():
-        
+        clear()
         print (selectedLine.get())
         line = selectedLine.get()
         output = get_info(line)
         txt.insert(END,output)
         return line
-        
+    #clears textbox
     def clear():        
         txt.delete('1.0',END)
-        
+    #cancels 
     def cancel_action():
                 canceled.set(True); root.destroy()
     Button(root, text="OK", command=action).pack(side=LEFT, ipadx=10)
